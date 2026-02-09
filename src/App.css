@@ -1,0 +1,619 @@
+@font-face {
+  font-family: 'NeueHaasDisplay-Light';
+  src: url('/NeueHaasDisplay-Light.ttf') format('truetype');
+  /* font-weight: 300; */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueHaasDisplay-Roman';
+  src: url('/NeueHaasDisplay-Roman.ttf') format('truetype');
+  /* font-weight: 400; */
+  font-style: normal;
+}
+
+html {
+  font-family: 'NeueHaasDisplay-Light', Helvetica Neue, Arial, Helvetica, sans-serif;
+  letter-spacing: 0.7px;
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+.roman {
+  font-family: 'NeueHaasDisplay-Roman', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+}
+
+.app-main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+  background-color: transparent;
+  color: inherit;
+}
+
+#option {
+  position: absolute;
+  display: inline-block;
+  margin: 11px 0 0 22px;
+  z-index: 10;
+}
+
+#option>p {
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+#option>p.active {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#option>#name {
+  font-family: 'NeueHaasDisplay-Roman', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+#option>#first,
+#option>#second {
+  font-size: 18px;
+}
+
+/* Mode Toggle */
+.mode-toggle {
+  position: absolute;
+  top: 10px;
+  right: 22px;
+  z-index: 10;
+  font-family: 'NeueHaasDisplay-Light', sans-serif;
+  font-size: 18px;
+  display: flex;
+  gap: 5px;
+}
+
+.mode-toggle span {
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.5;
+}
+
+.mode-toggle span.active {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mode-toggle .separator {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* Profile Section */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile-image {
+  width: 490px;
+}
+
+.profile-info {
+  position: relative;
+}
+
+.profile-info>p {
+  margin: 8px 0 0 -1px;
+  font-size: 22px;
+  /* font-style: italic; */
+  font-weight: 400;
+}
+
+#link {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0.5px;
+  display: flex;
+  gap: 7px;
+}
+
+.social-icon {
+  filter: grayscale(100%);
+  cursor: pointer;
+  width: 35px;
+}
+
+html.dark-mode .social-icon {
+  filter: grayscale(100%) invert(100%);
+}
+
+#vimeo {
+  opacity: 0.82;
+}
+
+#instagram {
+  opacity: 0.83;
+}
+
+/* Project Sections */
+.project-container {
+  display: flex;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: flex-start;
+}
+
+.project-image {
+  width: 984px;
+  aspect-ratio: 3 / 2;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.project-details {
+  position: static;
+  height: 0;
+  overflow: visible;
+  margin-left: 18px;
+}
+
+/* Extra space at the bottom for long content on desktop */
+.project-details::after {
+  content: "";
+  display: block;
+  height: 100px;
+  pointer-events: none;
+}
+
+.project-title {
+  font-family: 'NeueHaasDisplay-Roman', sans-serif;
+  font-size: 25px;
+  /* font-size: 26px; */
+  font-weight: 400;
+  margin-bottom: -2px;
+  margin-top: 19px;
+}
+
+.project-specs,
+.project-services {
+  font-size: 21px;
+  margin: 0 0 11px 0;
+  font-weight: 300;
+  white-space: normal;
+}
+
+.project-team {
+  font-size: 19px;
+  margin: 15px 0 11px 0;
+  font-weight: 300;
+  white-space: normal;
+}
+
+.project-description {
+  font-size: 21px;
+  margin: 0 0 11px 0;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.project-services {
+  margin-top: 15px;
+}
+
+.project-vimeo {
+  margin-top: 15px;
+}
+
+.project-vimeo>a {
+  font-size: 17px;
+  font-style: italic;
+}
+
+/* Custom Image Positioning by Project ID (necessary for artistic control) */
+#lifetime .project-image {
+  background-position: 53% 73%;
+  background-size: 116%;
+  max-width: 670px;
+}
+
+#fishtank .fishtank-figure {
+  width: 984px;
+  max-width: 670px;
+  aspect-ratio: 3 / 2;
+  position: relative;
+  margin: 0;
+}
+
+.fishtank-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: 40% 67%;
+  background-size: 133%;
+}
+
+#fishview .project-image {
+  background-position: 100% 0%;
+  background-size: 100.5%;
+  max-width: 670px;
+  margin-left: 40px;
+}
+
+#other-consciousness .project-image {
+  background-position: 50% 40%;
+  background-size: 100%;
+  max-width: 670px;
+  dynamic-range-limit: standard;
+  margin-left: 12px;
+}
+
+#yawninglink .project-image {
+  background-position: 43% 45%;
+  background-size: 110%;
+  max-width: 670px;
+  margin-left: 15px;
+}
+
+[id="0-100"] {
+  top: 52%;
+}
+
+[id="0-100"] .project-image {
+  aspect-ratio: 850 / 1280;
+  background-position: 50% 50%;
+  background-size: cover;
+  max-width: 400px;
+  margin-left: 60px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .app-main {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Hide scrollbar only on profile page */
+  html:has(.profile-container),
+  body:has(.profile-container) {
+    overflow: hidden;
+  }
+
+  .app-main:has(.profile-container) {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .mode-toggle {
+    display: none;
+  }
+
+  #option {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 20px 20px 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 6px;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 100;
+    background: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  html.dark-mode #option {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  #option>p {
+    color: inherit;
+    opacity: 0.5;
+  }
+
+  #option>#name {
+    font-size: 22.1px;
+    margin-bottom: 0;
+  }
+
+  #option>#first,
+  #option>#second {
+    font-size: 18.2px;
+  }
+
+  #option>p.active {
+    color: inherit;
+    opacity: 1;
+  }
+
+  #option>p.active::after {
+    content: none;
+  }
+
+  /* Profile mobile adjustment */
+  .profile-container {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .profile-image {
+    width: 80vw;
+    max-width: 80vw;
+    height: auto;
+    margin-bottom: 12px;
+  }
+
+  .profile-info {
+    width: 80vw;
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-info>p {
+    font-size: 24px;
+    margin: 0 0 12px 0;
+    line-height: 1.25;
+  }
+
+  #link {
+    position: static;
+    transform: none;
+    gap: 8px;
+    margin-left: 1px;
+  }
+
+  .social-icon {
+    width: 34px;
+  }
+
+  /* Project mobile adjustments */
+  .project-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .project-image,
+  .fishtank-figure {
+    width: 93vw !important;
+    max-width: 93vw !important;
+    margin: 0 0 12px 0 !important;
+    aspect-ratio: 3 / 2;
+  }
+
+  [id="0-100"] .project-image {
+    aspect-ratio: 850 / 1280 !important;
+  }
+
+  .project-details {
+    width: 92.5vw !important;
+    max-width: 92.5vw !important;
+    height: auto;
+    margin-left: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+  }
+
+  .project-details::after {
+    display: none;
+  }
+
+  .project-title {
+    font-size: 25px;
+    margin: 0;
+    line-height: 0.96;
+  }
+
+  .project-specs,
+  .project-description,
+  .project-services,
+  .project-team {
+    font-size: 22px;
+    margin: 0 0 15px 0;
+    white-space: normal !important;
+    width: 100% !important;
+    line-height: 1.2;
+  }
+
+  .project-team {
+    font-size: 19px;
+  }
+
+  /* Left-aligned text for mobile */
+  .project-description {
+    text-align: left !important;
+  }
+
+  .project-vimeo>a {
+    font-size: 20.8px;
+  }
+
+  /* Adaptive text lines for filling container width */
+  .adaptive-line {
+    display: inline;
+  }
+}
+
+/* Easter Egg: Swimming Fish */
+.easter-egg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+.swimming-fish {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 60px;
+  offset-path: var(--fish-path);
+  offset-rotate: auto;
+  animation: swim-on-path linear forwards;
+  user-select: none;
+  transform-style: preserve-3d;
+}
+
+.swimming-fish.parrot {
+  /* Stepped animation makes the fish "teleport" between positions */
+  animation-timing-function: steps(15, end);
+}
+
+.swimming-fish.parrot .fish-3d-wrapper {
+  /* Make the wobble faster for the parrot to match its erratic movement */
+  animation-duration: 0.6s;
+}
+
+.swimming-fish.parrot .fish-tail-top {
+  animation-duration: 0.15s;
+}
+
+.swimming-fish.parrot .fish-fin-left,
+.swimming-fish.parrot .fish-fin-right {
+  animation-duration: 0.2s;
+}
+
+.fish-3d-wrapper {
+  animation: fish-wobble-top 1.8s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.fish-tail-top {
+  transform-origin: 35px 30px;
+  animation: tail-wag-top 0.45s ease-in-out infinite alternate;
+}
+
+.fish-fin-left {
+  transform-origin: 30px 24px;
+  animation: fin-flutter-top 0.7s ease-in-out infinite alternate;
+}
+
+.fish-fin-right {
+  transform-origin: 30px 36px;
+  animation: fin-flutter-top 0.7s ease-in-out infinite alternate-reverse;
+}
+
+.fish-fin-dorsal {
+  transform-origin: 65px 30px;
+  animation: dorsal-waving 0.6s ease-in-out infinite alternate;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes dorsal-waving {
+  0% {
+    transform: skewX(-10deg) rotateY(-5deg) scaleY(1);
+  }
+
+  50% {
+    transform: skewX(5deg) rotateY(10deg) scaleY(1.05);
+  }
+
+  100% {
+    transform: skewX(15deg) rotateY(15deg) scaleY(1);
+  }
+}
+
+@keyframes swim-on-path {
+  from {
+    offset-distance: 0%;
+    opacity: 0;
+    scale: 0.7;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  to {
+    offset-distance: 100%;
+    opacity: 0;
+    scale: 1.1;
+  }
+}
+
+@keyframes fish-wobble-top {
+
+  0%,
+  100% {
+    transform: rotateZ(-12deg);
+  }
+
+  50% {
+    transform: rotateZ(12deg);
+  }
+}
+
+@keyframes tail-wag-top {
+  from {
+    transform: rotateZ(-20deg);
+  }
+
+  to {
+    transform: rotateZ(20deg);
+  }
+}
+
+@keyframes fin-flutter-top {
+  from {
+    transform: rotateX(-25deg) rotateZ(-12deg);
+  }
+
+  to {
+    transform: rotateX(25deg) rotateZ(12deg);
+  }
+}
