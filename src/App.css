@@ -283,6 +283,7 @@ html.dark-mode .social-icon {
   background-position: 50% 40%;
   background-size: 100%;
   max-width: 670px;
+  dynamic-range-limit: standard;
   margin-left: 12px;
 }
 
