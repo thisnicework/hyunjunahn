@@ -38,18 +38,19 @@ body {
 
 .app-main {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: transparent;
   color: inherit;
+  box-sizing: border-box;
 
   /* Desktop Scaling: 큰 모니터에서 비율 유지 */
   transform: scale(var(--desktop-scale, 1));
   transform-origin: top left;
-  width: calc(100% / var(--desktop-scale, 1));
-  height: calc(100% / var(--desktop-scale, 1));
+  width: calc(100vw / var(--desktop-scale, 1));
+  height: calc(100vh / var(--desktop-scale, 1));
 }
 
 #option {
@@ -168,6 +169,11 @@ html.dark-mode .social-icon {
 
 #instagram {
   opacity: 0.83;
+}
+
+.content-area {
+  padding-bottom: 120px;
+  box-sizing: border-box;
 }
 
 /* Project Sections */
