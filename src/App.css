@@ -307,15 +307,11 @@ html.dark-mode .social-icon {
     width: 100vw;
   }
 
-  /* Hide scrollbar only on profile page */
-  html:has(.profile-container),
-  body:has(.profile-container) {
-    overflow: hidden;
-  }
-
+  /* Ensure app-main is scrollable for content */
   .app-main:has(.profile-container) {
-    overflow: hidden;
-    height: 100vh;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
   }
 
   .mode-toggle {
@@ -368,16 +364,21 @@ html.dark-mode .social-icon {
 
   /* Profile mobile adjustment */
   .profile-container {
-    position: absolute;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
     display: flex !important;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: 60px 20px 80px 20px;
+    /* Space for nav and bottom margin */
     box-sizing: border-box;
+    margin: 0 auto;
+    min-height: calc(100vh - 80px);
+    /* Vertically center in available space */
+    justify-content: center;
   }
 
   .profile-image {
