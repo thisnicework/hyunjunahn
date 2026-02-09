@@ -19,8 +19,6 @@ html {
   color: #000;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
-  height: auto;
-  /* 고정 높이 제거 */
 }
 
 html.dark-mode {
@@ -40,10 +38,9 @@ body {
 
 .app-main {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
-  overflow-y: visible;
-  /* 내용을 자르지 않고 자연스럽게 흐르게 함 */
+  overflow-y: auto;
   overflow-x: hidden;
   background-color: transparent;
   color: inherit;
@@ -52,7 +49,7 @@ body {
   transform: scale(var(--desktop-scale, 1));
   transform-origin: top left;
   width: calc(100vw / var(--desktop-scale, 1));
-  min-height: calc(100vh / var(--desktop-scale, 1));
+  height: calc(100vh / var(--desktop-scale, 1));
 }
 
 #option {
@@ -313,7 +310,7 @@ html.dark-mode .social-icon {
   .app-main {
     overflow-y: auto;
     overflow-x: hidden;
-    min-height: 100dvh;
+    height: 100dvh;
     /* Dynamic viewport height for mobile */
     min-height: 100dvh;
     transform: none;
