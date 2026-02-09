@@ -221,7 +221,7 @@ function App() {
 
   // Mobile/Tablet: Sync with system dark mode preference + Desktop Scaling
   useEffect(() => {
-    const mobileQuery = "(max-width: 1024px), (pointer: coarse)";
+    const mobileQuery = "(pointer: coarse)";
     const darkQuery = "(prefers-color-scheme: dark)";
 
     const isMobile = window.matchMedia(mobileQuery).matches;
