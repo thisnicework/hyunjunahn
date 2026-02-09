@@ -364,7 +364,7 @@ html.dark-mode .social-icon {
     top: auto;
     left: auto;
     transform: none;
-    margin: 80px auto 100px auto;
+    margin: 90px auto 100px auto;
     /* 고정 여백으로 기기별 오차 및 버그 방지 */
     display: flex !important;
     flex-direction: column;
