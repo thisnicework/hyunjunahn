@@ -126,7 +126,6 @@ body {
 .profile-image {
   grid-area: 1 / 1;
   width: 490px;
-  transition: opacity 0.15s ease-in-out;
 }
 
 .profile-info {
