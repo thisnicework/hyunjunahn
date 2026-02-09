@@ -35,10 +35,10 @@ export const projects: Project[] = [
         descriptionWidth: '410px',
         descriptionSnippet: (
             <>
-                <span className="adaptive-line">Designed to explore "endlessly repeating boundaries beyond boundaries," this mobility device proposes a concept of spatial expansion by translating the fluid movements of a single fish into a mechanical trajectory.</span><br />
-                <span className="adaptive-line">As the fish swims within the transparent walls of an aquarium tank, its real-time position is captured and converted into omnidirectional motion, allowing the entire structure to maneuver as a singular unit where organic life and machinery merge into one.</span><br />
-                <span className="adaptive-line">This movement, however, is not a state of complete freedom, as the device is governed by a system that maintains its position within a specific zone through sensors that monitor a virtual perimeter to prevent any escape from the designated area.</span><br />
-                <span className="adaptive-line">By extending the physical walls of the tank into the programmed virtual boundaries of the system, the work manifests a continuum of constraints where one boundary merely sets the stage for the next, thereby ensuring the device remains strictly confined within a predefined space and revealing the invisible borders that fundamentally define our existence.</span>
+                Designed to explore "endlessly repeating boundaries beyond boundaries," this mobility device proposes a concept of spatial expansion by translating the fluid movements of a single fish into a mechanical trajectory.<br />
+                As the fish swims within the transparent walls of an aquarium tank, its real-time position is captured and converted into omnidirectional motion, allowing the entire structure to maneuver as a singular unit where organic life and machinery merge into one.<br />
+                This movement, however, is not a state of complete freedom, as the device is governed by a system that maintains its position within a specific zone through sensors that monitor a virtual perimeter to prevent any escape from the designated area.<br />
+                By extending the physical walls of the tank into the programmed virtual boundaries of the system, the work manifests a continuum of constraints where one boundary merely sets the stage for the next, thereby ensuring the device remains strictly confined within a predefined space and revealing the invisible borders that fundamentally define our existence.
             </>
         ),
         specs: [
@@ -69,7 +69,12 @@ export const projects: Project[] = [
         descriptionWidth: '450px',
         descriptionSnippet: (
             <>
-                <span className="adaptive-line">Inverting the conventional gaze, a rare encounter with the self unfolds through the eyes of the other.</span><br /><span className="adaptive-line">Two interconnected aquarium units and a ceiling projection operate in synchrony: as a tracking system monitors the movement of a goldfish in the first tank, a camera beneath the second tank follows its trajectory, casting an upward gaze onto the ceiling.</span><br /><span className="adaptive-line">Looking down into the water, viewers encounter their own image projected above as a reflection set within a vast aquatic void that observes them from the perspective of the gallery space itself.</span><br /><span className="adaptive-line">This visual inversion is enveloped by a dense soundscape captured by hydrophones, where the minute vibrations of water and the resonance of the surroundings are reconfigured into a low-frequency sonic environment.</span><br /><span className="adaptive-line">By synchronizing this tactile sound with the displaced gaze, the boundary between the observer and the observed dissolves.</span><br /><span className="adaptive-line">A new state of self-perception emerges, where one encounters the self through a foreign lens while inhabiting a space where the physical and the reflected are inextricably blurred.</span>
+                Inverting the conventional gaze, a rare encounter with the self unfolds through the eyes of the other.<br />
+                Two interconnected aquarium units and a ceiling projection operate in synchrony: as a tracking system monitors the movement of a goldfish in the first tank, a camera beneath the second tank follows its trajectory, casting an upward gaze onto the ceiling.<br />
+                Looking down into the water, viewers encounter their own image projected above as a reflection set within a vast aquatic void that observes them from the perspective of the gallery space itself.<br />
+                This visual inversion is enveloped by a dense soundscape captured by hydrophones, where the minute vibrations of water and the resonance of the surroundings are reconfigured into a low-frequency sonic environment.<br />
+                By synchronizing this tactile sound with the displaced gaze, the boundary between the observer and the observed dissolves.<br />
+                A new state of self-perception emerges, where one encounters the self through a foreign lens while inhabiting a space where the physical and the reflected are inextricably blurred.
             </>
         ),
         specs: [
@@ -109,7 +114,12 @@ export const projects: Project[] = [
         descriptionWidth: '430px',
         descriptionSnippet: (
             <>
-                <span className="adaptive-line">Centered on a task of visual alignment, this interface invites the viewer to maneuver a red circle into a black void using a joystick.</span><br /><span className="adaptive-line">During this simple act of coordination, the system covertly severs the link between the physical input and the on-screen movement, assuming autonomous control over the object.</span><br /><span className="adaptive-line">As the transition occurs seamlessly, the viewer operates under the illusion of agency, believing their intentions are still driving the action.</span><br /><span className="adaptive-line">The loss of control is only revealed when the software deliberately disrupts the trajectory by causing the circle to veer erratically from its path.</span><br /><span className="adaptive-line">This sudden rupture forces a retrospective inquiry into the boundary between self-will and external governance.</span><br /><span className="adaptive-line">It leaves the viewer to question the exact moment their autonomy was surrendered to the machine.</span>
+                Centered on a task of visual alignment, this interface invites the viewer to maneuver a red circle into a black void using a joystick.<br />
+                During this simple act of coordination, the system covertly severs the link between the physical input and the on-screen movement, assuming autonomous control over the object.<br />
+                As the transition occurs seamlessly, the viewer operates under the illusion of agency, believing their intentions are still driving the action.<br />
+                The loss of control is only revealed when the software deliberately disrupts the trajectory by causing the circle to veer erratically from its path.<br />
+                This sudden rupture forces a retrospective inquiry into the boundary between self-will and external governance.<br />
+                It leaves the viewer to question the exact moment their autonomy was surrendered to the machine.
             </>
         ),
         specs: [
@@ -135,7 +145,12 @@ export const projects: Project[] = [
         descriptionWidth: '435px',
         descriptionSnippet: (
             <>
-                <span className="adaptive-line">Exploring the invisible threads of human connectivity beneath conscious recognition, the phenomenon of subconscious contagion manifests through a shared biological rhythm.</span><br /><span className="adaptive-line">Although the sculpture deliberately avoids eye contact, computer vision monitors the presence of the other, maintaining a silent awareness that exists even before a conscious encounter.</span><br /><span className="adaptive-line">When a yawn occurs in front of the cast, the sculpture responds by imitating the action, translating an involuntary physiological reflex into a mechanical performance.</span><br /><span className="adaptive-line">Through this shared gesture, a silent recognition emerges between the two presences, forming a single, unconscious bond.</span><br /><span className="adaptive-line">This interaction suggests that even in the absence of active engagement or a direct gaze, we remain perceived and connected.</span><br /><span className="adaptive-line">It reflects a layer of existence where mutual recognition persists within the shadows of the unconscious.</span>
+                Exploring the invisible threads of human connectivity beneath conscious recognition, the phenomenon of subconscious contagion manifests through a shared biological rhythm.<br />
+                Although the sculpture deliberately avoids eye contact, computer vision monitors the presence of the other, maintaining a silent awareness that exists even before a conscious encounter.<br />
+                When a yawn occurs in front of the cast, the sculpture responds by imitating the action, translating an involuntary physiological reflex into a mechanical performance.<br />
+                Through this shared gesture, a silent recognition emerges between the two presences, forming a single, unconscious bond.<br />
+                This interaction suggests that even in the absence of active engagement or a direct gaze, we remain perceived and connected.<br />
+                It reflects a layer of existence where mutual recognition persists within the shadows of the unconscious.
             </>
         ),
         specs: [
@@ -163,7 +178,9 @@ export const projects: Project[] = [
         descriptionWidth: '600px',
         descriptionSnippet: (
             <>
-                <span className="adaptive-line">Relativity of scale manifests through visual parallels between the infinitesimal and the infinite, where clusters of overlapping circular orbits exist as ambiguous entities that neutralize the distinction between subatomic particles and interstellar nebulae.</span><br /><span className="adaptive-line">By establishing a visual parity between the microcosmic and the macrocosmic, these forms negate the conventional categorization of magnitude to reveal a singular state where the inherent properties of the atomic world and the astronomical are unified into a continuous presence.</span><br /><span className="adaptive-line">The logic of form persists with consistent intensity across every tier of existence, appearing within the void and the dense formation alike to demonstrate that the internal organization of matter remains constant regardless of absolute volume or the specifics of spatial displacement.</span>
+                Relativity of scale manifests through visual parallels between the infinitesimal and the infinite, where clusters of overlapping circular orbits exist as ambiguous entities that neutralize the distinction between subatomic particles and interstellar nebulae.<br />
+                By establishing a visual parity between the microcosmic and the macrocosmic, these forms negate the conventional categorization of magnitude to reveal a singular state where the inherent properties of the atomic world and the astronomical are unified into a continuous presence.<br />
+                The logic of form persists with consistent intensity across every tier of existence, appearing within the void and the dense formation alike to demonstrate that the internal organization of matter remains constant regardless of absolute volume or the specifics of spatial displacement.
             </>
         ),
         specs: [
@@ -171,7 +188,6 @@ export const projects: Project[] = [
             '148mm × 210mm'
         ],
         // services: [
-
         // ],
         imageSrc: '/image/DSC01544.jpg',
         // vimeoLink: 'https://vimeo.com/780710704/description'

@@ -473,12 +473,8 @@ html.dark-mode .social-icon {
   .project-vimeo>a {
     font-size: 20.8px;
   }
-
-  /* Adaptive text lines for filling container width */
-  .adaptive-line {
-    display: inline;
-  }
 }
+
 
 /* Easter Egg: Swimming Fish */
 .easter-egg-container {
