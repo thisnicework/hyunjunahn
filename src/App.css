@@ -48,8 +48,8 @@ body {
   /* Desktop Scaling: 큰 모니터에서 비율 유지 */
   transform: scale(var(--desktop-scale, 1));
   transform-origin: top left;
-  width: calc(100vw / var(--desktop-scale, 1));
-  height: calc(100vh / var(--desktop-scale, 1));
+  width: calc(100% / var(--desktop-scale, 1));
+  height: calc(100% / var(--desktop-scale, 1));
 }
 
 #option {

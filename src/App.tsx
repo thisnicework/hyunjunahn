@@ -247,7 +247,7 @@ function App() {
       const isMobileNow = window.matchMedia(mobileQuery).matches;
       if (!isMobileNow) {
         const baseWidth = 1512; // 기준 너비
-        const currentWidth = window.innerWidth;
+        const currentWidth = document.documentElement.clientWidth; // 스크롤바 제외 너비 사용
         const scale = currentWidth / baseWidth;
         document.documentElement.style.setProperty('--desktop-scale', scale.toString());
       } else {
