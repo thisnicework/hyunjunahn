@@ -291,8 +291,9 @@ html.dark-mode .social-icon {
   margin-left: 60px;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
+/* Mobile & Tablet Adjustments (iPad support) */
+@media (max-width: 1024px),
+(pointer: coarse) {
   .app-main {
     overflow-y: auto;
     height: auto;
