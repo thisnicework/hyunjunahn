@@ -7,13 +7,13 @@ const distPath = path.join(__dirname, 'dist');
 
 // 작품 데이터 (제목 추가!)
 const projects = [
-    { id: 'fishtank', title: 'Fish Tank', image: 'DSC01525.JPG' },
-    { id: 'fishview', title: 'Fish View', image: 'fishviewimage.jpg' },
-    { id: 'other-consciousness', title: 'other-consciousness', image: 'IMG_2648.jpg' },
-    { id: 'yawninglink', title: 'Yawning Link', image: 'DSC01303.JPG' },
-    { id: '0-100', title: '0-100', image: 'DSC01544.jpg' },
-    { id: 'lifetime', title: 'Lifetime', image: 'DSC00800.jpg' },
-    { id: 'hyunjunahn', title: 'Hyunjun Ahn', image: 'profile1.jpg' }
+    { id: 'fishtank', title: 'Fish Tank', image: 'DSC01525.webp' },
+    { id: 'fishview', title: 'Fish View', image: 'fishviewimage.webp' },
+    { id: 'other-consciousness', title: 'other-consciousness', image: 'IMG_2648.webp' },
+    { id: 'yawninglink', title: 'Yawning Link', image: 'DSC01303.webp' },
+    { id: '0-100', title: '0-100', image: 'DSC01544.webp' },
+    { id: 'lifetime', title: 'Lifetime', image: 'DSC00800.webp' },
+    { id: 'hyunjunahn', title: 'Hyunjun Ahn', image: 'profile1.webp' }
 ];
 
 async function generate() {

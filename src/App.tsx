@@ -54,7 +54,7 @@ const GoldfishSVG = () => (
 
 const ProfileContent = ({ imgCount }: { imgCount: number }) => (
   <div id="hyunjunahn" className="profile-container">
-    <img src={`/image/profile${imgCount}.jpg`} alt="Profile" className="profile-image" />
+    <img src={`/image/profile${imgCount}.webp`} alt="Profile" className="profile-image" />
     <div className="profile-info">
       <p>{"\u00b7"}{"\u2006"}New media art<br />{"\u00b7"}{"\u2006"}Embedded develop</p>
       <div id="link">
@@ -127,7 +127,7 @@ const ProjectContent = ({ project, fishTankImgId }: { project: Project, fishTank
             className="fishtank-image"
             style={{
               opacity: fishTankImgId === 'DSC01525' ? 1 : 0,
-              backgroundImage: 'url(/image/DSC01525.JPG)',
+              backgroundImage: 'url(/image/DSC01525.webp)',
             }}
           />
           <img
@@ -136,7 +136,7 @@ const ProjectContent = ({ project, fishTankImgId }: { project: Project, fishTank
             className="fishtank-image"
             style={{
               opacity: fishTankImgId === 'DSC01524' ? 1 : 0,
-              backgroundImage: 'url(/image/DSC01524.JPG)',
+              backgroundImage: 'url(/image/DSC01524.webp)',
             }}
           />
         </figure>
@@ -144,9 +144,11 @@ const ProjectContent = ({ project, fishTankImgId }: { project: Project, fishTank
         <img
           ref={imgRef}
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style={{ backgroundImage: `url(${project.imageSrc || '/image/DSC00800.jpg'})` }}
+          style={{ backgroundImage: `url(${project.imageSrc || '/image/DSC00800.webp'})` }}
           alt={project.title}
           className="project-image"
+          loading="lazy"
+          decoding="async"
         />
       )}
       <div className="project-details" ref={textDivRef}>
@@ -295,9 +297,9 @@ function App() {
   useEffect(() => {
     const imagesToPreload = []
     if (activeProjectId === 'fishtank') {
-      imagesToPreload.push('/image/DSC01525.JPG', '/image/DSC01524.JPG')
+      imagesToPreload.push('/image/DSC01525.webp', '/image/DSC01524.webp')
     } else if (activeProjectId === 'hyunjunahn') {
-      imagesToPreload.push('/image/profile1.jpg', '/image/profile2.jpg')
+      imagesToPreload.push('/image/profile1.webp', '/image/profile2.webp')
     }
 
     imagesToPreload.forEach(src => {

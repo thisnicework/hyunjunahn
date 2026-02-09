@@ -97,7 +97,7 @@ export const projects: Project[] = [
             name: 'X34',
             members: ['Hyunjun Ahn', 'Gyungjin Lim', 'Jaeyoon Cha', 'Jaeyi Cha']
         },
-        imageSrc: '/image/fishviewimage.jpg',
+        imageSrc: '/image/fishviewimage.webp',
         // vimeoLink: 'https://vimeo.com/780710704/description'
     },
     {
@@ -123,7 +123,7 @@ export const projects: Project[] = [
             'HTML5 Canvas',
             'Mac Mini'
         ],
-        imageSrc: '/image/IMG_2648.jpg',
+        imageSrc: '/image/IMG_2648.webp',
         // vimeoLink: 'https://vimeo.com/placeholder'
     },
     {
@@ -151,7 +151,7 @@ export const projects: Project[] = [
             'Webcam',
             'Macbook Air'
         ],
-        imageSrc: '/image/DSC01303.JPG',
+        imageSrc: '/image/DSC01303.webp',
         // vimeoLink: 'https://vimeo.com/placeholder'
     },
     {
@@ -173,7 +173,7 @@ export const projects: Project[] = [
         // services: [
 
         // ],
-        imageSrc: '/image/DSC01544.jpg',
+        imageSrc: '/image/DSC01544.webp',
         // vimeoLink: 'https://vimeo.com/780710704/description'
     },
     {
@@ -203,7 +203,7 @@ export const projects: Project[] = [
             'DS1307',
             'Multiple Transistor structure'
         ],
-        imageSrc: '/image/DSC00800.jpg',
+        imageSrc: '/image/DSC00800.webp',
         vimeoLink: 'https://vimeo.com/780710704'
     },
 ];
