@@ -118,8 +118,15 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.profile-image-wrapper {
+  display: grid;
+  place-items: center;
+}
+
 .profile-image {
+  grid-area: 1 / 1;
   width: 490px;
+  transition: opacity 0.15s ease-in-out;
 }
 
 .profile-info {
@@ -373,11 +380,18 @@ html.dark-mode .social-icon {
     box-sizing: border-box;
   }
 
+  .profile-image-wrapper {
+    display: grid;
+    place-items: center;
+    width: 80vw;
+    margin-bottom: 12px;
+  }
+
   .profile-image {
+    grid-area: 1 / 1;
     width: 80vw;
     max-width: 80vw;
     height: auto;
-    margin-bottom: 12px;
   }
 
   .profile-info {

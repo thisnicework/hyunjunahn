@@ -54,7 +54,20 @@ const GoldfishSVG = () => (
 
 const ProfileContent = ({ imgCount }: { imgCount: number }) => (
   <div id="hyunjunahn" className="profile-container">
-    <img src={`/image/profile${imgCount}.jpg`} alt="Profile" className="profile-image" />
+    <div className="profile-image-wrapper">
+      <img
+        src="/image/profile1.jpg"
+        alt="Profile"
+        className="profile-image"
+        style={{ opacity: imgCount === 1 ? 1 : 0 }}
+      />
+      <img
+        src="/image/profile2.jpg"
+        alt="Profile"
+        className="profile-image secondary"
+        style={{ opacity: imgCount === 2 ? 1 : 0 }}
+      />
+    </div>
     <div className="profile-info">
       <p>{"\u00b7"}{"\u2006"}New media art<br />{"\u00b7"}{"\u2006"}Embedded develop</p>
       <div id="link">
