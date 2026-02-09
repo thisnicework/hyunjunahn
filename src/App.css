@@ -38,13 +38,12 @@ body {
 
 .app-main {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: transparent;
   color: inherit;
-  box-sizing: border-box;
 
   /* Desktop Scaling: 큰 모니터에서 비율 유지 */
   transform: scale(var(--desktop-scale, 1));
@@ -172,7 +171,6 @@ html.dark-mode .social-icon {
 }
 
 .content-area {
-  padding-bottom: 120px;
   box-sizing: border-box;
 }
 
@@ -201,12 +199,11 @@ html.dark-mode .social-icon {
   margin-left: 18px;
 }
 
-/* Extra space at the bottom for long content on desktop */
-.project-details::after {
-  content: "";
-  display: block;
-  height: 100px;
-  pointer-events: none;
+.project-details {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
+  /* 텍스트 끝부분 보호를 위한 패딩 */
 }
 
 .project-title {
