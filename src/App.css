@@ -360,12 +360,10 @@ html.dark-mode .social-icon {
 
   /* Profile mobile adjustment */
   .profile-container {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    margin: 40px auto;
-    /* Centered with vertical padding */
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex !important;
     flex-direction: column;
     align-items: center;
