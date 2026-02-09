@@ -409,7 +409,7 @@ function App() {
         </span>
       </div>
 
-      <main className="content-area">
+      <main className="content-area" key={activeProjectId || 'root'}>
         {activeProject ? (
           activeProject.id === 'hyunjunahn' ? (
             <ProfileContent imgCount={profileImgCount} />
