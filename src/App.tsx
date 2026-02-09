@@ -219,6 +219,31 @@ function App() {
     duration: number;
   }[]>([])
 
+  // Mobile/Tablet: Sync with system dark mode preference
+  useEffect(() => {
+    const mobileQuery = "(max-width: 1024px), (pointer: coarse)";
+    const darkQuery = "(prefers-color-scheme: dark)";
+
+    const isMobile = window.matchMedia(mobileQuery).matches;
+    const systemDark = window.matchMedia(darkQuery);
+
+    // Initial check: if mobile, follow system
+    if (isMobile) {
+      setIsDarkMode(systemDark.matches);
+    }
+
+    // Listen for system changes (only applies when in mobile/tablet mode)
+    const handleSystemChange = (e: MediaQueryListEvent) => {
+      const currentlyMobile = window.matchMedia(mobileQuery).matches;
+      if (currentlyMobile) {
+        setIsDarkMode(e.matches);
+      }
+    };
+
+    systemDark.addEventListener('change', handleSystemChange);
+    return () => systemDark.removeEventListener('change', handleSystemChange);
+  }, []);
+
   // Sync dark mode class with html element
   useEffect(() => {
     if (isDarkMode) {
