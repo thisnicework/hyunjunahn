@@ -320,6 +320,9 @@ function App() {
     }
   }, [activeProjectId])
 
+  const activeProject = useMemo(() =>
+    projects.find(p => p.id === activeProjectId) || null
+    , [activeProjectId])
 
   // Timers for animated content
   useEffect(() => {
@@ -407,18 +410,13 @@ function App() {
       </div>
 
       <main className="content-area">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            style={{ display: activeProjectId === project.id ? 'block' : 'none' }}
-          >
-            {project.id === 'hyunjunahn' ? (
-              <ProfileContent imgCount={profileImgCount} />
-            ) : (
-              <ProjectContent project={project} fishTankImgId={fishTankImgId} />
-            )}
-          </div>
-        ))}
+        {activeProject ? (
+          activeProject.id === 'hyunjunahn' ? (
+            <ProfileContent imgCount={profileImgCount} />
+          ) : (
+            <ProjectContent project={activeProject} fishTankImgId={fishTankImgId} />
+          )
+        ) : null}
       </main>
 
       {/* Easter Egg Fish Layer */}
