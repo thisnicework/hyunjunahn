@@ -1,8 +1,12 @@
 {
     "rewrites": [
         {
+            "source": "/(image|assets|public)/(.+)",
+            "destination": "/$1/$2"
+        },
+        {
             "source": "/(.*)",
-            "destination": "/index.html"
+            "destination": "/api/index"
         }
     ]
 }
