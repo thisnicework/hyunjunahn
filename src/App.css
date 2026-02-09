@@ -19,6 +19,8 @@ html {
   color: #000;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  height: auto;
+  /* 고정 높이 제거 */
 }
 
 html.dark-mode {
@@ -38,9 +40,10 @@ body {
 
 .app-main {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
-  overflow-y: auto;
+  overflow-y: visible;
+  /* 내용을 자르지 않고 자연스럽게 흐르게 함 */
   overflow-x: hidden;
   background-color: transparent;
   color: inherit;
@@ -49,7 +52,7 @@ body {
   transform: scale(var(--desktop-scale, 1));
   transform-origin: top left;
   width: calc(100vw / var(--desktop-scale, 1));
-  height: calc(100vh / var(--desktop-scale, 1));
+  min-height: calc(100vh / var(--desktop-scale, 1));
 }
 
 #option {
@@ -170,10 +173,6 @@ html.dark-mode .social-icon {
   opacity: 0.83;
 }
 
-.content-area {
-  box-sizing: border-box;
-}
-
 /* Project Sections */
 .project-container {
   display: flex;
@@ -199,11 +198,12 @@ html.dark-mode .social-icon {
   margin-left: 18px;
 }
 
-.project-details {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 60px;
-  /* 텍스트 끝부분 보호를 위한 패딩 */
+/* Extra space at the bottom for long content on desktop */
+.project-details::after {
+  content: "";
+  display: block;
+  height: 100px;
+  pointer-events: none;
 }
 
 .project-title {
@@ -313,7 +313,7 @@ html.dark-mode .social-icon {
   .app-main {
     overflow-y: auto;
     overflow-x: hidden;
-    height: 100dvh;
+    min-height: 100dvh;
     /* Dynamic viewport height for mobile */
     min-height: 100dvh;
     transform: none;
