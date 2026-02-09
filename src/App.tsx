@@ -320,9 +320,6 @@ function App() {
     }
   }, [activeProjectId])
 
-  const activeProject = useMemo(() =>
-    projects.find(p => p.id === activeProjectId) || null
-    , [activeProjectId])
 
   // Timers for animated content
   useEffect(() => {
@@ -355,16 +352,23 @@ function App() {
     })
 
     // 2. After initial load, preload ALL other project images in the background
-    const timer = setTimeout(() => {
+    // 브라우저가 휴식 상태일 때(Idle) 로딩하여 현재 화면 성능에 영향을 주지 않음
+    const handle = (window.requestIdleCallback || ((cb: any) => setTimeout(cb, 1000)))(() => {
       projects.forEach(p => {
         if (p.imageSrc && !essentialImages.includes(p.imageSrc)) {
           const img = new Image()
           img.src = p.imageSrc
         }
       })
-    }, 2000)
+    });
 
-    return () => clearTimeout(timer)
+    return () => {
+      if (window.cancelIdleCallback) {
+        window.cancelIdleCallback(handle as number);
+      } else {
+        clearTimeout(handle as number);
+      }
+    };
   }, [activeProjectId])
 
   const handleProjectClick = (projectId: string) => {
@@ -403,13 +407,18 @@ function App() {
       </div>
 
       <main className="content-area">
-        {activeProject ? (
-          activeProject.id === 'hyunjunahn' ? (
-            <ProfileContent imgCount={profileImgCount} />
-          ) : (
-            <ProjectContent project={activeProject} fishTankImgId={fishTankImgId} />
-          )
-        ) : null}
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            style={{ display: activeProjectId === project.id ? 'block' : 'none' }}
+          >
+            {project.id === 'hyunjunahn' ? (
+              <ProfileContent imgCount={profileImgCount} />
+            ) : (
+              <ProjectContent project={project} fishTankImgId={fishTankImgId} />
+            )}
+          </div>
+        ))}
       </main>
 
       {/* Easter Egg Fish Layer */}
