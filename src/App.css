@@ -389,7 +389,7 @@ html.dark-mode .social-icon {
   }
 
   .profile-info>p {
-    font-size: 24px;
+    font-size: 22px;
     margin: 0 0 12px 0;
     line-height: 1.25;
   }
@@ -398,11 +398,11 @@ html.dark-mode .social-icon {
     position: static;
     transform: none;
     gap: 8px;
-    margin-left: 1px;
+    margin-left: 2px;
   }
 
   .social-icon {
-    width: 34px;
+    width: 30px;
   }
 
   /* Project mobile adjustments */
