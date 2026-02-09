@@ -360,15 +360,17 @@ html.dark-mode .social-icon {
 
   /* Profile mobile adjustment */
   .profile-container {
-    position: absolute;
-    top: 49%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 16dvh auto 50px auto;
+    /* 49% 느낌을 주면서 겹치지 않게 여백 설정 */
     display: flex !important;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: 0 20px;
     box-sizing: border-box;
   }
 
