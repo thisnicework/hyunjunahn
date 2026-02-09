@@ -301,18 +301,25 @@ html.dark-mode .social-icon {
 @media (pointer: coarse) {
   .app-main {
     overflow-y: auto;
-    height: auto;
-    min-height: 100vh;
+    height: 100dvh;
+    /* Dynamic viewport height for mobile */
+    min-height: 100dvh;
     transform: none;
     width: 100vw;
+
+    /* 스크롤은 작동하되 스크롤바만 숨김 */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 
-  /* Ensure app-main is scrollable for content */
-  .app-main:has(.profile-container) {
-    overflow-y: auto;
-    height: auto;
-    min-height: 100vh;
+  .app-main::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
   }
+
+  /* Remove forced hidden overflow that blocked landscape scrolling */
 
   .mode-toggle {
     display: none;
@@ -365,20 +372,17 @@ html.dark-mode .social-icon {
   /* Profile mobile adjustment */
   .profile-container {
     position: relative;
-    top: 0;
-    left: 0;
+    top: auto;
+    left: auto;
     transform: none;
+    margin: 40px auto;
+    /* Centered with vertical padding */
     display: flex !important;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 60px 20px 80px 20px;
-    /* Space for nav and bottom margin */
+    padding: 20px;
     box-sizing: border-box;
-    margin: 0 auto;
-    min-height: calc(100vh - 80px);
-    /* Vertically center in available space */
-    justify-content: center;
   }
 
   .profile-image {
