@@ -212,7 +212,9 @@ function App() {
 
   const [profileImgCount, setProfileImgCount] = useState(1)
   const [fishTankImgId, setFishTankImgId] = useState('DSC01525')
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  )
   const [swimmingFish, setSwimmingFish] = useState<{
     id: number;
     path: string;
@@ -224,13 +226,8 @@ function App() {
     const mobileQuery = "(pointer: coarse)";
     const darkQuery = "(prefers-color-scheme: dark)";
 
-    const isMobile = window.matchMedia(mobileQuery).matches;
     const systemDark = window.matchMedia(darkQuery);
 
-    // Initial check: if mobile, follow system
-    if (isMobile) {
-      setIsDarkMode(systemDark.matches);
-    }
 
     // Scaling 로직: 큰 모니터에서 비율 유지
     const updateScale = () => {
