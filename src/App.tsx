@@ -54,7 +54,7 @@ const GoldfishSVG = () => (
 
 const ProfileContent = ({ imgCount }: { imgCount: number }) => (
   <div id="hyunjunahn" className="profile-container">
-    <img src={`/image/profile${imgCount}.webp`} alt="Profile" className="profile-image" />
+    <img src={`/image/profile${imgCount}.jpg`} alt="Profile" className="profile-image" />
     <div className="profile-info">
       <p>{"\u00b7"}{"\u2006"}New media art<br />{"\u00b7"}{"\u2006"}Embedded develop</p>
       <div id="link">
@@ -127,8 +127,10 @@ const ProjectContent = ({ project, fishTankImgId }: { project: Project, fishTank
             className="fishtank-image"
             style={{
               opacity: fishTankImgId === 'DSC01525' ? 1 : 0,
-              backgroundImage: 'url(/image/DSC01525.webp)',
+              backgroundImage: 'url(/image/DSC01525.JPG)',
             }}
+            loading="eager"
+            fetchPriority="high"
           />
           <img
             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -136,18 +138,21 @@ const ProjectContent = ({ project, fishTankImgId }: { project: Project, fishTank
             className="fishtank-image"
             style={{
               opacity: fishTankImgId === 'DSC01524' ? 1 : 0,
-              backgroundImage: 'url(/image/DSC01524.webp)',
+              backgroundImage: 'url(/image/DSC01524.JPG)',
             }}
+            loading="eager"
+            fetchPriority="low"
           />
         </figure>
       ) : (
         <img
           ref={imgRef}
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style={{ backgroundImage: `url(${project.imageSrc || '/image/DSC00800.webp'})` }}
+          style={{ backgroundImage: `url(${project.imageSrc || '/image/DSC00800.jpg'})` }}
           alt={project.title}
           className="project-image"
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
           decoding="async"
         />
       )}
@@ -295,17 +300,30 @@ function App() {
 
   // Preload images
   useEffect(() => {
-    const imagesToPreload = []
+    // 1. Preload immediate essential images
+    const essentialImages: string[] = []
     if (activeProjectId === 'fishtank') {
-      imagesToPreload.push('/image/DSC01525.webp', '/image/DSC01524.webp')
+      essentialImages.push('/image/DSC01525.JPG', '/image/DSC01524.JPG')
     } else if (activeProjectId === 'hyunjunahn') {
-      imagesToPreload.push('/image/profile1.webp', '/image/profile2.webp')
+      essentialImages.push('/image/profile1.jpg', '/image/profile2.jpg')
     }
 
-    imagesToPreload.forEach(src => {
+    essentialImages.forEach(src => {
       const img = new Image()
       img.src = src
     })
+
+    // 2. After initial load, preload ALL other project images in the background
+    const timer = setTimeout(() => {
+      projects.forEach(p => {
+        if (p.imageSrc && !essentialImages.includes(p.imageSrc)) {
+          const img = new Image()
+          img.src = p.imageSrc
+        }
+      })
+    }, 2000)
+
+    return () => clearTimeout(timer)
   }, [activeProjectId])
 
   const handleProjectClick = (projectId: string) => {
