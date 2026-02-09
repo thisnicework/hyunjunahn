@@ -300,28 +300,12 @@ html.dark-mode .social-icon {
 /* Mobile & Tablet Adjustments: Only for touch devices (iPad, Phone, etc.) */
 @media (pointer: coarse) {
   .app-main {
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
     overflow-y: auto;
     height: 100dvh;
+    /* Dynamic viewport height for mobile */
     min-height: 100dvh;
     transform: none;
     width: 100vw;
-  }
-
-  /* 프로필 페이지일 때만 공간을 꽉 채워 중앙 정렬 수행 */
-  .app-main:has(.profile-container) .content-area {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 5dvh;
-    /* 시각적 중앙을 위해 살짝 위로 보정 */
-  }
-
-  .content-area {
-    width: 100%;
   }
 
   /* Remove forced hidden overflow that blocked landscape scrolling */
@@ -380,7 +364,8 @@ html.dark-mode .social-icon {
     top: auto;
     left: auto;
     transform: none;
-    margin: 0 auto;
+    margin: 80px auto 100px auto;
+    /* 고정 여백으로 기기별 오차 및 버그 방지 */
     display: flex !important;
     flex-direction: column;
     align-items: center;
