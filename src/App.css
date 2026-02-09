@@ -306,17 +306,6 @@ html.dark-mode .social-icon {
     min-height: 100dvh;
     transform: none;
     width: 100vw;
-
-    /* 스크롤은 작동하되 스크롤바만 숨김 */
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-  }
-
-  .app-main::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari, Opera */
   }
 
   /* Remove forced hidden overflow that blocked landscape scrolling */
