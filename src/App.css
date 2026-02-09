@@ -41,6 +41,12 @@ body {
   overflow: auto;
   background-color: transparent;
   color: inherit;
+
+  /* Desktop Scaling: 큰 모니터에서 비율 유지 */
+  transform: scale(var(--desktop-scale, 1));
+  transform-origin: top left;
+  width: calc(100vw / var(--desktop-scale, 1));
+  height: calc(100vh / var(--desktop-scale, 1));
 }
 
 #option {
@@ -298,6 +304,8 @@ html.dark-mode .social-icon {
     overflow-y: auto;
     height: auto;
     min-height: 100vh;
+    transform: none;
+    width: 100vw;
   }
 
   /* Hide scrollbar only on profile page */

@@ -219,7 +219,7 @@ function App() {
     duration: number;
   }[]>([])
 
-  // Mobile/Tablet: Sync with system dark mode preference
+  // Mobile/Tablet: Sync with system dark mode preference + Desktop Scaling
   useEffect(() => {
     const mobileQuery = "(max-width: 1024px), (pointer: coarse)";
     const darkQuery = "(prefers-color-scheme: dark)";
@@ -232,7 +232,19 @@ function App() {
       setIsDarkMode(systemDark.matches);
     }
 
-    // Listen for system changes (only applies when in mobile/tablet mode)
+    // Scaling 로직: 큰 모니터에서 비율 유지
+    const updateScale = () => {
+      const isMobileNow = window.matchMedia(mobileQuery).matches;
+      if (!isMobileNow) {
+        const baseWidth = 1512; // 기준 너비
+        const currentWidth = window.innerWidth;
+        const scale = currentWidth / baseWidth;
+        document.documentElement.style.setProperty('--desktop-scale', scale.toString());
+      } else {
+        document.documentElement.style.setProperty('--desktop-scale', '1');
+      }
+    };
+
     const handleSystemChange = (e: MediaQueryListEvent) => {
       const currentlyMobile = window.matchMedia(mobileQuery).matches;
       if (currentlyMobile) {
@@ -241,7 +253,13 @@ function App() {
     };
 
     systemDark.addEventListener('change', handleSystemChange);
-    return () => systemDark.removeEventListener('change', handleSystemChange);
+    window.addEventListener('resize', updateScale);
+    updateScale(); // 초기 실행
+
+    return () => {
+      systemDark.removeEventListener('change', handleSystemChange);
+      window.removeEventListener('resize', updateScale);
+    };
   }, []);
 
   // Sync dark mode class with html element
@@ -256,8 +274,9 @@ function App() {
   // Easter egg: Fish swimming on Enter & Mobile Tap
   useEffect(() => {
     const spawnFish = () => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
+      const scale = parseFloat(document.documentElement.style.getPropertyValue('--desktop-scale')) || 1;
+      const w = window.innerWidth / scale;
+      const h = window.innerHeight / scale;
 
       const startX = Math.random() * (w * 1.3) - (w * 0.15);
       const startY = Math.random() * (h * 1.3) - (h * 0.15);
