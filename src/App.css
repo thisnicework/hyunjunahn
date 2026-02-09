@@ -18,6 +18,7 @@ html {
   background-color: #fff;
   color: #000;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 html.dark-mode {
@@ -32,13 +33,15 @@ html.dark-mode {
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .app-main {
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: transparent;
   color: inherit;
 
@@ -306,6 +309,7 @@ html.dark-mode .social-icon {
 @media (pointer: coarse) {
   .app-main {
     overflow-y: auto;
+    overflow-x: hidden;
     height: 100dvh;
     /* Dynamic viewport height for mobile */
     min-height: 100dvh;
