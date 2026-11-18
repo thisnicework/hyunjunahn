@@ -248,6 +248,24 @@ html.dark-mode .social-icon {
 }
 
 /* Custom Image Positioning by Project ID (necessary for artistic control) */
+#howtodosomethingforastone .project-image {
+  background-position: 50% 50%;
+  background-size: 100%;
+  max-width: 670px;
+}
+
+#device .project-image {
+  background-position: 50% 50%;
+  background-size: 100%;
+  max-width: 670px;
+}
+
+#personaldecoder .project-image {
+  background-position: 50% 50%;
+  background-size: 100%;
+  max-width: 670px;
+}
+
 #lifetime .project-image {
   background-position: 53% 73%;
   background-size: 116%;

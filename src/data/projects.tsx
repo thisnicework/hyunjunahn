@@ -27,6 +27,60 @@ export const projects: Project[] = [
         isProfile: true,
     },
     {
+        id: 'howtodosomethingforastone',
+        label: 'How to do something for a stone',
+        year: '2026',
+        title: 'How to do something for a stone',
+        textAlign: 'left',
+        descriptionSnippet: (
+            <>
+                Coming soon
+            </>
+        ),
+        team: {
+            name: 'LaNA',
+            members: ['Hyunjun Ahn', 'Jaeyoon Cha', 'Jaeyi Cha']
+        },
+        // imageSrc: '/image/howtodosomethingforastone.jpg',
+        // vimeoLink: 'https://vimeo.com/placeholder'
+    },
+    {
+        id: 'device',
+        label: 'Device',
+        year: '2026',
+        title: 'Device',
+        textAlign: 'left',
+        descriptionSnippet: (
+            <>
+                Not archived yet
+            </>
+        ),
+        team: {
+            name: 'LaNA',
+            members: ['Hyunjun Ahn', 'Jaeyoon Cha', 'Jaeyi Cha']
+        },
+        // imageSrc: '/image/device.jpg',
+        // vimeoLink: 'https://vimeo.com/placeholder'
+    },
+    {
+        id: 'personaldecoder',
+        label: 'Personal Decoder',
+        year: '2026',
+        title: 'Personal Decoder',
+        textAlign: 'left',
+        descriptionSnippet: (
+            <>
+                Not archived yet
+            </>
+        ),
+        team: {
+            name: 'SoundNow',
+            members: ['Yeji Kim', 'Hyunjun Ahn', 'Geonwoo Kim', 'Seongyeol Lee']
+        },
+        // imageSrc: '/image/personaldecoder.jpg',
+        // vimeoLink: 'https://vimeo.com/placeholder'
+    },
+    {
         id: 'fishtank',
         label: 'Fish Tank',
         year: '2025',

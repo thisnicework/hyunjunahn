@@ -7,6 +7,9 @@ const distPath = path.join(__dirname, 'dist');
 
 // 작품 데이터 (제목 추가!)
 const projects = [
+    { id: 'howtodosomethingforastone', title: 'How to do something for a stone', image: 'DSC00800.jpg' },
+    { id: 'device', title: 'Device', image: 'DSC00800.jpg' },
+    { id: 'personaldecoder', title: 'Personal Decoder', image: 'DSC00800.jpg' },
     { id: 'fishtank', title: 'Fish Tank', image: 'DSC01525.JPG' },
     { id: 'fishview', title: 'Fish View', image: 'fishviewimage.jpg' },
     { id: 'other-consciousness', title: 'other-consciousness', image: 'IMG_2648.jpg' },

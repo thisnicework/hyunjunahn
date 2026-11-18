@@ -157,19 +157,23 @@ const ProjectContent = ({ project, fishTankImgId }: { project: Project, fishTank
             fetchPriority="low"
           />
         </figure>
-      ) : (
+      ) : project.imageSrc ? (
         <img
           ref={imgRef}
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style={{ backgroundImage: `url(${project.imageSrc || '/image/DSC00800.jpg'})` }}
+          style={{ backgroundImage: `url(${project.imageSrc})` }}
           alt={project.title}
           className="project-image"
           loading="eager"
           fetchPriority="high"
           decoding="async"
         />
-      )}
-      <div className="project-details" ref={textDivRef}>
+      ) : null}
+      <div
+        className="project-details"
+        ref={textDivRef}
+        style={!isFishTank && !project.imageSrc ? { height: 'auto', marginLeft: 0 } : undefined}
+      >
         <h1 className="project-title" ref={titleRef}>{project.title}{"\u2006"}({project.year})</h1>
         {project.specs && (
           <p className="project-specs">
