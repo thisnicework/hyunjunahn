@@ -266,6 +266,18 @@ html.dark-mode .social-icon {
   max-width: 670px;
 }
 
+[id="2.5d"] .project-image {
+  background-position: 50% 50%;
+  background-size: 100%;
+  max-width: 670px;
+}
+
+#greenpig .project-image {
+  background-position: 50% 50%;
+  background-size: 100%;
+  max-width: 670px;
+}
+
 #lifetime .project-image {
   background-position: 53% 73%;
   background-size: 116%;

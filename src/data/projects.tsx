@@ -27,6 +27,20 @@ export const projects: Project[] = [
         isProfile: true,
     },
     {
+        id: 'greenpig',
+        label: 'Green Pig',
+        year: '2026',
+        title: 'Green Pig',
+        textAlign: 'left',
+        descriptionSnippet: (
+            <>
+                Coming soon
+            </>
+        ),
+        // imageSrc: '/image/greenpig.jpg',
+        // vimeoLink: 'https://vimeo.com/placeholder'
+    },
+    {
         id: 'howtodosomethingforastone',
         label: 'How to do something for a stone',
         year: '2026',
@@ -78,6 +92,20 @@ export const projects: Project[] = [
             members: ['Yeji Kim', 'Hyunjun Ahn', 'Geonwoo Kim', 'Seongyeol Lee']
         },
         // imageSrc: '/image/personaldecoder.jpg',
+        // vimeoLink: 'https://vimeo.com/placeholder'
+    },
+    {
+        id: '2.5d',
+        label: '2.5D',
+        year: '2025',
+        title: '2.5D',
+        textAlign: 'left',
+        descriptionSnippet: (
+            <>
+                Not archived yet
+            </>
+        ),
+        // imageSrc: '/image/2.5d.jpg',
         // vimeoLink: 'https://vimeo.com/placeholder'
     },
     {
