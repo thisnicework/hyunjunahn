@@ -9,7 +9,7 @@ export interface Project {
     specs?: React.ReactNode[];
     services?: string[];
     team?: {
-        name: string;
+        name?: string;
         members: string[];
     };
     vimeoLink?: string;
@@ -37,6 +37,9 @@ export const projects: Project[] = [
                 Coming soon
             </>
         ),
+        team: {
+            members: ['Hyunjun Ahn', 'Hyungjin Ahn']
+        },
         // imageSrc: '/image/greenpig.jpg',
         // vimeoLink: 'https://vimeo.com/placeholder'
     },

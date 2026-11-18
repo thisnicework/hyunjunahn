@@ -203,7 +203,9 @@ const ProjectContent = ({ project, fishTankImgId }: { project: Project, fishTank
         )}
         {project.team && (
           <p className="project-team">
-            Collective {"\u00b7"} {project.team.name} {"\u00b7"} {project.team.members.join(' / ')}
+            {project.team.name
+              ? <>Collective {"\u00b7"} {project.team.name} {"\u00b7"} {project.team.members.join(' / ')}</>
+              : project.team.members.join(' / ')}
           </p>
         )}
         {project.vimeoLink && (
