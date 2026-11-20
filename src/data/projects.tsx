@@ -27,24 +27,6 @@ export const projects: Project[] = [
         isProfile: true,
     },
     {
-        id: 'howtodosomethingforastone',
-        label: 'How to do something for a stone',
-        year: '2026',
-        title: 'How to do something for a stone',
-        textAlign: 'left',
-        descriptionSnippet: (
-            <>
-                Coming soon
-            </>
-        ),
-        team: {
-            name: 'LaNA',
-            members: ['Hyunjun Ahn', 'Jaeyoon Cha', 'Jaeyi Cha']
-        },
-        // imageSrc: '/image/howtodosomethingforastone.jpg',
-        // vimeoLink: 'https://vimeo.com/placeholder'
-    },
-    {
         id: 'device',
         label: 'Device',
         year: '2026',
